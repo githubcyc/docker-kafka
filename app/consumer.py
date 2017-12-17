@@ -5,4 +5,6 @@ consumer = KafkaConsumer(bootstrap_servers='kafka:9092')
 consumer.subscribe('foobar')
 print('consumer connected')
 for msg in consumer:
-    print(f'received data：{msg}')
+    print(msg)
+    res = msg.value.decode()
+    print(f'received data：{res}')
