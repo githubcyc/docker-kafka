@@ -99,3 +99,6 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+zookeeper/datalog/version-2/log.*
+zookeeper/data/version-2/log.*
