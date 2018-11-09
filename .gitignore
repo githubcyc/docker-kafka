@@ -100,5 +100,6 @@ ENV/
 # mypy
 .mypy_cache/
 
+.vscode
 zookeeper/datalog/version-2/log.*
 zookeeper/data/version-2/log.*

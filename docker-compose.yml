@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
   zoo:
-    image: zookeeper
+    image: zookeeper:3.4.13
     restart: always
     hostname: zookeeper
     volumes:
@@ -23,7 +23,6 @@ services:
   producer:
     stdin_open: true
     tty: true
-    restart: always
     build: ./app
     volumes:
       - ./app:/app
@@ -31,6 +30,7 @@ services:
       - zoo
       - kafka
     command: ['python3', 'producer.py']
+    restart: always
 
   consumer:
     stdin_open: true

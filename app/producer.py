@@ -1,11 +1,13 @@
 from kafka import KafkaProducer
 import time
+
+
 #  connect to Kafka
 producer = KafkaProducer(bootstrap_servers='kafka:9092')
 
 
 def emit():
-    for i in range(100):
+    for i in range(10):
         print(f'send message {i}')
         str_res = f'{i}'
         producer.send('foobar', str_res.encode())
