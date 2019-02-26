@@ -21,6 +21,7 @@ services:
       - zoo
 
   producer:
+    image: python/producer-consumer
     stdin_open: true
     tty: true
     build: ./app
@@ -33,9 +34,9 @@ services:
     restart: always
 
   consumer:
+    image: python/producer-consumer
     stdin_open: true
     tty: true
-    build: ./app
     restart: always
     volumes:
       - ./app:/app
